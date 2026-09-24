@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-24T00:00:00.000Z",
+  "title": "Design System: Nextmove",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Warm Paper", "canonical": "#f4f1e8", "tonalRamp": ["#282721", "#403f37", "#59584f", "#747268", "#908e83", "#adab9f", "#cbc8bc", "#e9e6da"] },
+      "paper-bright": { "role": "neutral", "displayName": "Bright Stock", "canonical": "#fffdf7", "tonalRamp": ["#292822", "#424037", "#5c594f", "#777468", "#949083", "#b2aea0", "#d1cdbd", "#f0ecdc"] },
+      "ink": { "role": "neutral", "displayName": "Carbon Ink", "canonical": "#171713", "tonalRamp": ["#11110e", "#25251f", "#3b3b33", "#535249", "#6c6b60", "#878579", "#a3a194", "#c1bfae"] },
+      "muted": { "role": "neutral", "displayName": "Soft Graphite", "canonical": "#6f7068", "tonalRamp": ["#242521", "#393a34", "#50514a", "#686960", "#818278", "#9b9c92", "#b6b7ac", "#d2d3c8"] },
+      "line": { "role": "neutral", "displayName": "Pencil Rule", "canonical": "#d8d4c8", "tonalRamp": ["#282720", "#403f36", "#5a584e", "#747267", "#908e82", "#aeab9e", "#ccc8bb", "#eae6d9"] },
+      "violet": { "role": "primary", "displayName": "Notebook Violet", "canonical": "#6548e8", "tonalRamp": ["#180d4b", "#291877", "#3d28a5", "#5239d1", "#6e57eb", "#8e7af0", "#b1a2f5", "#d5ccfa"] },
+      "violet-dark": { "role": "primary", "displayName": "Deep Violet", "canonical": "#4c34c4", "tonalRamp": ["#100b37", "#1e1459", "#2e207e", "#3c2ba2", "#4f39c7", "#705ed2", "#9488de", "#b9b2eb"] },
+      "lime": { "role": "tertiary", "displayName": "Margin Lime", "canonical": "#d9ff63", "tonalRamp": ["#333e09", "#546512", "#789219", "#9fbd27", "#c6e33f", "#d8f45c", "#e4f985", "#effcae"] },
+      "coral": { "role": "tertiary", "displayName": "Deadline Coral", "canonical": "#ff765f", "tonalRamp": ["#48130d", "#702117", "#982f20", "#c13f2d", "#e6533d", "#f76b54", "#fa8d79", "#fbb19f"] },
+      "aqua": { "role": "secondary", "displayName": "Quiet Aqua", "canonical": "#90e6d0", "tonalRamp": ["#153b34", "#205b4f", "#2d7c6a", "#419d86", "#5dc0a4", "#7bd4ba", "#9ce2cc", "#bfeedd"] },
+      "blue": { "role": "secondary", "displayName": "Interview Blue", "canonical": "#81a8ff", "tonalRamp": ["#142c5d", "#214384", "#315ba9", "#4674cc", "#628cf0", "#81a2f4", "#a1b9f7", "#c3d1fa"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Editorial Display", "purpose": "Oversized Today headline; variable font weight and tight tracking carry the visual character." },
+      "body": { "displayName": "Planner Text", "purpose": "Shared family for readable descriptions and compact interface copy." },
+      "label": { "displayName": "Working Labels", "purpose": "Bold, tracked uppercase labels for fields and stage context." }
+    },
+    "shadows": [
+      { "name": "action-lift", "value": "0 7px 18px rgba(80, 53, 200, .2)", "purpose": "Soft violet lift under the primary action." },
+      { "name": "surface-low", "value": "0 7px 20px rgba(57, 50, 35, .055)", "purpose": "Quiet separation for application cards." },
+      { "name": "surface-hover", "value": "0 12px 25px rgba(57, 50, 35, .1)", "purpose": "Raised hover state for application cards." },
+      { "name": "editor-sheet", "value": "-22px 0 60px rgba(20,20,17,.18)", "purpose": "Strong edge shadow on the focused editor sheet." }
+    ],
+    "motion": [
+      { "name": "card-response", "value": "transform .22s cubic-bezier(.25,1,.5,1), box-shadow .22s", "purpose": "Short, springy card lift on hover; removed for reduced-motion preference." },
+      { "name": "editor-entry", "value": ".42s cubic-bezier(.16,1,.3,1)", "purpose": "Right sheet enters with a gentle slide and fade; reduced-motion preference collapses the animation." }
+    ],
+    "breakpoints": [
+      { "name": "compact-rail", "value": "960px" },
+      { "name": "mobile", "value": "720px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main add and save action, with a confident violet fill.",
+      "html": "<button class=\"ds-primary\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"/></svg>Add application</button>",
+      "css": ".ds-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 0; border-radius: 12px; background: var(--violet, #6548e8); color: #fff; font: 750 13px 'Bricolage Grotesque Variable', sans-serif; box-shadow: 0 7px 18px rgba(80,53,200,.2); cursor: pointer; transition: background .18s, transform .18s; } .ds-primary svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; } .ds-primary:hover { background: var(--violet-dark, #4c34c4); transform: translateY(-1px); } .ds-primary:focus-visible { outline: 3px solid var(--violet, #6548e8); outline-offset: 3px; } .ds-primary:active { transform: translateY(0); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Quiet cancel or secondary choice on a bright surface.",
+      "html": "<button class=\"ds-secondary\">Cancel</button>",
+      "css": ".ds-secondary { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 16px; border: 1px solid #c8c4ba; border-radius: 12px; background: var(--paper-bright, #fffdf7); color: var(--ink, #171713); font: 750 13px 'Bricolage Grotesque Variable', sans-serif; cursor: pointer; transition: background .18s; } .ds-secondary:hover { background: #ebe7dc; } .ds-secondary:focus-visible { outline: 3px solid var(--violet, #6548e8); outline-offset: 3px; } .ds-secondary:active { background: #e4e0d5; }"
+    },
+    {
+      "name": "Form Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Warm tinted text field with a clear violet focus halo.",
+      "html": "<label class=\"ds-field\"><span>Company</span><input placeholder=\"e.g. Spotify\" /></label>",
+      "css": ".ds-field { display: grid; gap: 7px; color: #5d5e57; font: 800 10px/1.3 'Bricolage Grotesque Variable', sans-serif; letter-spacing: .06em; text-transform: uppercase; } .ds-field input { width: 100%; height: 43px; padding: 11px 12px; border: 1px solid #d3cfc4; border-radius: 11px; background: #f7f4ec; color: var(--ink, #171713); font: 400 12px 'Bricolage Grotesque Variable', sans-serif; letter-spacing: normal; text-transform: none; transition: border-color .18s, box-shadow .18s; } .ds-field input::placeholder { color: #77786f; } .ds-field input:focus { border-color: var(--violet, #6548e8); box-shadow: 0 0 0 3px rgba(101,72,232,.12); outline: 0; } .ds-field input:focus-visible { outline: 2px solid var(--violet, #6548e8); outline-offset: 2px; }"
+    },
+    {
+      "name": "Active Navigation Item",
+      "kind": "nav",
+      "refersTo": "nav-active",
+      "description": "Rail link with a quiet dark highlight and lime active indicator.",
+      "html": "<a class=\"ds-nav-active\" href=\"#today\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2L12 3z\"/></svg><span>Today</span><i></i></a>",
+      "css": ".ds-nav-active { display: flex; align-items: center; gap: 11px; padding: 12px 13px; border-radius: 12px; background: #30302a; color: #fff; text-decoration: none; font: 650 14px 'Bricolage Grotesque Variable', sans-serif; } .ds-nav-active svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; } .ds-nav-active i { width: 7px; height: 7px; margin-left: auto; border-radius: 50%; background: var(--lime, #d9ff63); } .ds-nav-active:hover { background: #393932; } .ds-nav-active:focus-visible { outline: 3px solid var(--lime, #d9ff63); outline-offset: 3px; }"
+    },
+    {
+      "name": "Deadline Tag",
+      "kind": "chip",
+      "refersTo": "deadline-tag",
+      "description": "Compact due-date signal with text and tone for today or overdue.",
+      "html": "<span class=\"ds-deadline ds-deadline-today\">Today · Oct 4</span>",
+      "css": ".ds-deadline { display: inline-flex; align-items: center; padding: 6px 9px; border-radius: 999px; background: #eeece4; color: #5d5e57; font: 750 10px 'Bricolage Grotesque Variable', sans-serif; } .ds-deadline-today { background: var(--lime, #d9ff63); color: #2c3800; } .ds-deadline-overdue { background: #ffded8; color: #8a2e21; }"
+    },
+    {
+      "name": "Application Card",
+      "kind": "card",
+      "refersTo": "application-card",
+      "description": "Bright, compact opportunity summary with a tactile clipped monogram.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-head\"><span class=\"ds-avatar\">FI</span><div><strong>Product Design Intern</strong><small>Figma</small></div></div><div class=\"ds-card-meta\">San Francisco · Oct 4</div><p>Prep 3 portfolio stories</p></article>",
+      "css": ".ds-card { padding: 13px; border-radius: 14px; background: var(--paper-bright, #fffdf7); color: var(--ink, #171713); box-shadow: 0 7px 20px rgba(57,50,35,.055); cursor: pointer; transition: transform .22s cubic-bezier(.25,1,.5,1), box-shadow .22s; } .ds-card:hover { transform: translateY(-2px); box-shadow: 0 12px 25px rgba(57,50,35,.1); } .ds-card:focus-within { outline: 3px solid var(--violet, #6548e8); outline-offset: 3px; } .ds-card-head { display: flex; align-items: center; gap: 9px; } .ds-avatar { display: grid; place-items: center; flex: 0 0 34px; width: 34px; height: 34px; border-radius: 11px 11px 3px 11px; background: #e9e5da; font: 800 10px 'Bricolage Grotesque Variable', sans-serif; } .ds-card-head div { display: grid; min-width: 0; gap: 2px; } .ds-card-head strong, .ds-card-head small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .ds-card-head strong { font: 700 11px 'Bricolage Grotesque Variable', sans-serif; } .ds-card-head small { color: var(--muted, #6f7068); font: 400 10px 'Bricolage Grotesque Variable', sans-serif; } .ds-card-meta { margin-top: 13px; color: #696a63; font: 400 9px 'Bricolage Grotesque Variable', sans-serif; } .ds-card p { margin: 12px 0 0; padding-top: 10px; border-top: 1px solid #ebe7dd; color: #4f504a; font: 400 10px/1.4 'Bricolage Grotesque Variable', sans-serif; }"
+    },
+    {
+      "name": "On Your Radar Queue",
+      "kind": "custom",
+      "refersTo": "action-queue",
+      "description": "Numbered, scannable follow-up row that foregrounds the next useful action.",
+      "html": "<button class=\"ds-action-row\"><span class=\"ds-action-index\">01</span><span class=\"ds-action-copy\"><strong>Prep 3 portfolio stories</strong><small>Figma · Product Design Intern</small></span><span class=\"ds-deadline\">Oct 4</span></button>",
+      "css": ".ds-action-row { display: grid; grid-template-columns: 36px minmax(0,1fr) auto; gap: 13px; align-items: center; width: 100%; padding: 13px 0; border: 0; border-bottom: 1px solid #ebe7dc; background: transparent; color: var(--ink, #171713); text-align: left; cursor: pointer; } .ds-action-row:hover .ds-action-copy strong { color: var(--violet, #6548e8); } .ds-action-row:focus-visible { outline: 3px solid var(--violet, #6548e8); outline-offset: 3px; } .ds-action-index { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 10px; background: #e8e6de; font: 800 10px 'Bricolage Grotesque Variable', sans-serif; } .ds-action-copy { display: grid; min-width: 0; gap: 3px; } .ds-action-copy strong, .ds-action-copy small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .ds-action-copy strong { font: 700 13px 'Bricolage Grotesque Variable', sans-serif; } .ds-action-copy small { color: var(--muted, #6f7068); font: 400 11px 'Bricolage Grotesque Variable', sans-serif; } .ds-deadline { padding: 6px 9px; border-radius: 999px; background: #eeece4; color: #5d5e57; font: 750 10px 'Bricolage Grotesque Variable', sans-serif; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Campus Editorial Planner",
+    "overview": "The Campus Editorial Planner treats a job search as a personal plan in motion. Warm paper and carbon ink make the workspace feel like a well-kept working notebook; oversized, tightly set headings give each visit an editorial point of entry. Compact metadata keeps 5–40 opportunities scannable without making the interface feel like a recruiting database.\n\nViolet marks the primary action and moments of focus. Lime brings a quick signal to what is due today and to the momentum panel, while coral and cool secondary hues distinguish outcomes and stages. Cards, clipped corner marks, small uppercase labels, and restrained shadows add tactile character while keeping next actions in front. The interface explicitly frames progress as information rather than a score.",
+    "keyCharacteristics": [
+      "Warm paper, carbon ink, and bright but bounded signals",
+      "Editorial display type paired with compact, practical labels",
+      "Action-first hierarchy with a tactile application pipeline",
+      "Responsive, locally grounded personal workspace"
+    ],
+    "rules": [
+      { "name": "The Signal Rule", "body": "Violet directs action; lime identifies immediate attention. Keep both legible and purposeful rather than using them as decorative fills everywhere.", "section": "colors" },
+      { "name": "The One Family Rule", "body": "Use Bricolage Grotesque Variable throughout the interface; create hierarchy through size, weight, and tracking rather than introducing a new display face.", "section": "typography" },
+      { "name": "The Quiet Lift Rule", "body": "Shadows should clarify an interactive layer or raised surface; use paper tone and borders for ordinary grouping.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the warm paper canvas and carbon text as the default working surface.",
+      "Do use violet for primary actions and focus, and lime for immediate attention or active momentum cues.",
+      "Do keep company and role prominent while secondary metadata stays compact and may truncate cleanly.",
+      "Do preserve visible keyboard focus and honor reduced-motion preferences.",
+      "Do keep overdue, today, and future deadlines distinguishable by both text and color."
+    ],
+    "donts": [
+      "Don't turn the momentum percentage into a score or use rejection as a celebratory event.",
+      "Don't make shadows the primary way ordinary content is grouped.",
+      "Don't rely on drag-and-drop as the only way to change a stage.",
+      "Don't introduce additional type families without a demonstrated hierarchy need."
+    ]
+  }
+}
